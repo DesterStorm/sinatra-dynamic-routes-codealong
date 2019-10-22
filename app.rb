@@ -13,11 +13,15 @@ class App < Sinatra::Base
     "Hello #{@user_name}!"
   end
 
-  # medicines_controller.rb
-  get '/medicines/:id' do
-    @medicine = all_the_medicines.select do |medicine|
-      medicine.id == params[:id]
-    end.first
-    erb :'/medicines/show.html'
+  # Code your final two routes here:
+  get "/goodbye/:name" do
+  	@name = params[:name]
+  	"Goodbye, #{@name}."
   end
+
+    get "/multiply/:num1/:num2" do
+      @product = params[:num1].to_i * params[:num2].to_i
+      "#{@product}"
+    end
+
 end
